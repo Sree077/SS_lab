@@ -1,21 +1,19 @@
 #include <stdio.h>
 
 int main() {
-    int n, i;
+    int n, i, bt[n], wt[n], tat[n];
     float avg_wt = 0, avg_tat = 0;
 
     printf("Enter number of processes: ");
     scanf("%d", &n);
-    
-    int bt[n], wt[n], tat[n];
-    
+     
     printf("Enter burst times:\n");
     for (i = 0; i < n; i++) {
         printf("P%d: ", i + 1);
         scanf("%d", &bt[i]);
     }
     
-    wt[0] = 0; // Waiting time for the first process is 0
+    wt[0] = 0; 
     for (i = 1; i < n; i++) {
         wt[i] = wt[i - 1] + bt[i - 1];
     }
