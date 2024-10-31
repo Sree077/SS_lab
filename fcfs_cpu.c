@@ -1,11 +1,13 @@
 #include <stdio.h>
 
 int main() {
-    int n, i, bt[n], wt[n], tat[n];
+    int n, i;
     float avg_wt = 0, avg_tat = 0;
 
     printf("Enter number of processes: ");
     scanf("%d", &n);
+
+    int bt[n], wt[n], tat[n];
      
     printf("Enter burst times:\n");
     for (i = 0; i < n; i++) {
