@@ -38,25 +38,3 @@ int main() {
             break;
         }
     }
-
-    printf("\nOrder of request served:\n");
-
-    // Serve requests to the left of the initial head position
-    for (i = scan; i >= 0; i--) {
-        seek += abs(ioq[i] - ioq[i + 1]);
-        printf("%d -> ", ioq[i]);
-    }
-
-    // Serve requests to the right of the initial head position
-    for (i = scan + 1; i < n; i++) {
-        seek += abs(ioq[i] - ioq[i - 1]);
-        printf("%d -> ", ioq[i]);
-    }
-
-    avg_seek = seek / (n - 2); // Exclude the initial head position and 0
-
-    printf("\n\nTotal seek time is %.2f\n", seek);
-    printf("Average seek time is %.2f\n", avg_seek);
-
-    return 0;
-}
